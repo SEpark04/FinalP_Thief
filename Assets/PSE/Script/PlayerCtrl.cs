@@ -14,7 +14,7 @@ public class PlayerCtrl : MonoBehaviour
 
     private Vector3 moveDir = new Vector3(0, 0, 0);  // 방향
 
-    [SerializeField] private float jumpForce = 5f;  // 점프 파워
+    [SerializeField] private float jumpForce = 10f;  // 점프 파워
     [SerializeField] private Transform groundCheck; // 바닥 체크 위치 (캐릭터 발 아래 위치)
     [SerializeField] private float groundDistance = 0.2f; // 바닥 체크를 위한 거리
     [SerializeField] private LayerMask groundMask;  // 바닥 레이어 마스크

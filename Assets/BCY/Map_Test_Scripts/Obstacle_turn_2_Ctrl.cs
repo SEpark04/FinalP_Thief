@@ -8,28 +8,30 @@ public class Obstacle_turn_2_Ctrl : MonoBehaviour
     public float rotationSpeed = -10f;
     public float moveSpeed = 5f;
 
-    // 레이캐스트의 범위
-    public float detectionRange = 10f;
-
-    // 레이캐스트가 감지할 대상 (플레이어 태그를 설정)
-    public string playerTag = "Player";
+    // 탐지 범위와 태그 설정
+    public float detectionRange = 10f; // 탐지 반경
+    private string playerTag = "Player";
 
     // 플레이어를 발견했는지 여부를 추적하는 변수
     private bool isPlayerDetected = false;
 
-    // Update에서 레이캐스트 실행
+    // 이동 거리 추적 변수
+    private Vector3 initialPosition;
+    public float moveDistanceLimit = 20f; // 최대 이동 거리
+
     void Update()
     {
-        // 레이캐스트 발사
-        RaycastHit hit;
-        Vector3 rayDirection = transform.right; // Z축 기준으로 Ray를 발사하기 위한 방향 설정
+        // 구형 탐지 수행
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRange);
 
-        if (Physics.Raycast(transform.position, rayDirection, out hit, detectionRange))
+        foreach (Collider hitCollider in hitColliders)
         {
-            // 충돌한 오브젝트의 태그가 플레이어인지 확인
-            if (hit.collider.CompareTag(playerTag))
+            // 플레이어가 탐지되었는지 확인
+            if (hitCollider.CompareTag(playerTag))
             {
                 isPlayerDetected = true;
+                initialPosition = transform.position; // 초기 위치 저장
+                break; // 탐지되었으면 더 이상 탐색할 필요 없음
             }
         }
 
@@ -47,13 +49,21 @@ public class Obstacle_turn_2_Ctrl : MonoBehaviour
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime, Space.Self);
         // 이동
         transform.position -= new Vector3(0, 0, moveSpeed * Time.deltaTime);
+
+        // 이동한 거리를 계산
+        float movedDistance = Vector3.Distance(initialPosition, transform.position);
+
+        // 일정 거리 이상 이동하면 비활성화
+        if (movedDistance >= moveDistanceLimit)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
-    // 디버그용: Scene 뷰에서 레이캐스트를 시각화
+    // 디버그용: Scene 뷰에서 탐지 범위를 시각화
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Vector3 rayDirection = transform.right; // Z축 방향으로 시각화
-        Gizmos.DrawLine(transform.position, transform.position + rayDirection * detectionRange);
+        Gizmos.DrawWireSphere(transform.position, detectionRange); // 구형 탐지 범위를 시각화
     }
 }

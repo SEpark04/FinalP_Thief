@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8577254347609987624}
-  - component: {fileID: 6346700596380208855}
+  - component: {fileID: 6526545554558567765}
   m_Layer: 3
   m_Name: Road_Double
   m_TagString: Untagged
@@ -80,7 +80,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6346700596380208855
+--- !u!65 &6526545554558567765
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,8 +91,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 40, y: 8, z: 55}
+  m_Center: {x: -15, y: 0, z: 25}
 --- !u!1001 &1257453540
 PrefabInstance:
   m_ObjectHideFlags: 0

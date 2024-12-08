@@ -28,12 +28,14 @@ public class Obstacle_Hammer_ctrl : MonoBehaviour
         if (targetRotationAngle >= maxRotationAngle || targetRotationAngle <= -maxRotationAngle)
         {
             rotationDirection *= -1; // 회전 방향을 반전
+            targetRotationAngle = Mathf.Clamp(targetRotationAngle, -maxRotationAngle, maxRotationAngle);
         }
 
         // 현재 회전 각도를 부드럽게 목표 각도로 보간
-        currentRotationAngle = Mathf.Lerp(currentRotationAngle, targetRotationAngle, Time.deltaTime * rotationSpeed);
+        currentRotationAngle = Mathf.Lerp(currentRotationAngle, targetRotationAngle, Time.deltaTime * 2f);
 
-        // X축을 기준으로 회전
-        transform.rotation = Quaternion.Euler(currentRotationAngle, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        // Z축을 기준으로 회전
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, currentRotationAngle);
     }
+
 }

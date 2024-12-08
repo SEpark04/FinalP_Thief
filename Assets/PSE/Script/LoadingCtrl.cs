@@ -31,16 +31,16 @@ public class LoadingCtrl : MonoBehaviour
         {
             yield return null;
 
-            if(aop.progress > 0.9f)  //90% 이전
+            if(aop.progress < 0.8f)  //80% 이전
             {
                 //로딩 진행도에 따라 로딩바가 채워짐
                 loadingBar.fillAmount = aop.progress;
             }
-            else  //90% 이후
+            else  //80% 이후
             {
-                //페이크 로딩. 10%를 1초간 채운 뒤 씬을 불러옴.
-                timer += Time.unscaledDeltaTime;
-                loadingBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer);
+                //페이크 로딩. 20%를 2초간 채운 뒤 씬을 불러옴.
+                timer += Time.unscaledDeltaTime / 2f;
+                loadingBar.fillAmount = Mathf.Lerp(0.8f, 1f, timer);
                 if(loadingBar.fillAmount >= 1f)
                 {
                     aop.allowSceneActivation = true;

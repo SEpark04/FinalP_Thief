@@ -51,6 +51,12 @@ public class PlayerCtrl : MonoBehaviour
         transform.Rotate(Vector3.up * Time.deltaTime * rotSpeed * Input.GetAxis("Mouse X"));
 
         // 캐릭터 점프
+        /*if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }*/
+
         isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, groundDistance, groundMask); // 바닥에 있는지 체크
 
         if (!isGrounded)
@@ -68,5 +74,12 @@ public class PlayerCtrl : MonoBehaviour
         }
 
     }
-
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == groundMask)
+        {
+            isGrounded = true;
+        }
+    }*/
 }

@@ -48,7 +48,7 @@ public class MouseCursorCtrl : MonoBehaviour
             SetCursorVisible(false, null, CursorLockMode.Locked);
         }
     }
-
+    
     public void SetCursorVisible(bool visible, Texture2D cursor, CursorLockMode lockMode)
     {
         Cursor.visible = visible;

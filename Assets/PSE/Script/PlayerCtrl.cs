@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +15,8 @@ public class PlayerCtrl : MonoBehaviour
     private Vector3 moveDir = new Vector3(0, 0, 0);  // 방향
 
     [SerializeField] private float jumpForce = 10f;  // 점프 파워
+    //public float timeBeforeNextJump = 1.2f;
+    //private float canJump = 0f;
     [SerializeField] private Transform groundCheck; // 바닥 체크 위치 (캐릭터 발 아래 위치)
     [SerializeField] private float groundDistance = 0.2f; // 바닥 체크를 위한 거리
     [SerializeField] private LayerMask groundMask;  // 바닥 레이어 마스크
@@ -51,6 +53,13 @@ public class PlayerCtrl : MonoBehaviour
         transform.Rotate(Vector3.up * Time.deltaTime * rotSpeed * Input.GetAxis("Mouse X"));
 
         // 캐릭터 점프
+        /*if (Input.GetButtonDown("Jump") && Time.time > canJump)
+        {
+            rb.AddForce(0, jumpForce, 0);
+            canJump = Time.time + timeBeforeNextJump;
+            //anim.SetTrigger("jump");
+        }*/
+
         /*if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpawnTirgger
   - CinemachineTarget
+  - end
   layers:
   - Default
   - TransparentFX

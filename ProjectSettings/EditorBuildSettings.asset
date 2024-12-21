@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 93ef5d7b36e100445b38289148671078
+  - enabled: 1
+    path: Assets/Scenes/JumpDeath.unity
+    guid: 6261540e4b747fb43a67a8fa85d44085
   m_configObjects: {}

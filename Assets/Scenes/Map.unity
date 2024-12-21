@@ -3028,7 +3028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &989718707
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3360,6 +3360,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3084811380498560501, guid: aec9c6d432b1d724e9a77119187edb09,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084811380498560501, guid: aec9c6d432b1d724e9a77119187edb09,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54722a31b39e2dd488c5a8e06f913695,
+        type: 3}
+    - target: {fileID: 3084811380498560501, guid: aec9c6d432b1d724e9a77119187edb09,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084811380498560501, guid: aec9c6d432b1d724e9a77119187edb09,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084811380498560501, guid: aec9c6d432b1d724e9a77119187edb09,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084811380498560501, guid: aec9c6d432b1d724e9a77119187edb09,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3084811380833151002, guid: aec9c6d432b1d724e9a77119187edb09,
         type: 3}
       propertyPath: m_RootOrder
@@ -3428,6 +3459,11 @@ PrefabInstance:
     - target: {fileID: 3084811380877946948, guid: aec9c6d432b1d724e9a77119187edb09,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084811381286398188, guid: aec9c6d432b1d724e9a77119187edb09,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -74,6 +74,11 @@ public class GameManager : MonoBehaviour
     // 점프하면 HpCtrl 스크립트에서 실행되는 게임오버 이벤트
     public void DieJump()
     {
-        Debug.Log("점프함!");
+        gotoJumpDeath();
+    }
+
+    public void gotoJumpDeath() 
+    {
+        SceneManager.LoadScene("JumpDeath");
     }
 }

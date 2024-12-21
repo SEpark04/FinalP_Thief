@@ -23,8 +23,8 @@ public class LoadingCtrl : MonoBehaviour
 
     IEnumerator LoadSceneProcess()
     {
-        AsyncOperation aop = SceneManager.LoadSceneAsync(nextScene);
-        aop.allowSceneActivation = false;
+        AsyncOperation aop = SceneManager.LoadSceneAsync(nextScene); // 비동기 방식으로 로드
+        aop.allowSceneActivation = false;  // 씬 전환을 일시적으로 막음
 
         float timer = 0f;
         while (!aop.isDone)

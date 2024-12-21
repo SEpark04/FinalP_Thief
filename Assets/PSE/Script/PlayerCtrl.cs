@@ -15,8 +15,6 @@ public class PlayerCtrl : MonoBehaviour
     private Vector3 moveDir = new Vector3(0, 0, 0);  // 방향
 
     [SerializeField] private float jumpForce = 10f;  // 점프 파워
-    //public float timeBeforeNextJump = 1.2f;
-    //private float canJump = 0f;
     [SerializeField] private Transform groundCheck; // 바닥 체크 위치 (캐릭터 발 아래 위치)
     [SerializeField] private float groundDistance = 0.2f; // 바닥 체크를 위한 거리
     [SerializeField] private LayerMask groundMask;  // 바닥 레이어 마스크
@@ -52,20 +50,16 @@ public class PlayerCtrl : MonoBehaviour
         // 캐릭터 회전
         transform.Rotate(Vector3.up * Time.deltaTime * rotSpeed * Input.GetAxis("Mouse X"));
 
-        // 캐릭터 점프
-        /*if (Input.GetButtonDown("Jump") && Time.time > canJump)
+        // 캐릭터 점프 (점프시 죽음)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(0, jumpForce, 0);
-            canJump = Time.time + timeBeforeNextJump;
-            //anim.SetTrigger("jump");
-        }*/
+            /*rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;*/
+            HpCtrl.instance.jumpD = true;
+            HpCtrl.instance.Hp_down(90.0f);
+        }
 
-        /*if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }*/
-
+        // 바닥 인식하는 Ray
         isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, groundDistance, groundMask); // 바닥에 있는지 체크
 
         if (!isGrounded)
@@ -77,18 +71,6 @@ public class PlayerCtrl : MonoBehaviour
             _animator.SetBool("p_Jump", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) // 바닥에 있을 때 Space를 누르면
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
-
     }
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.layer == groundMask)
-        {
-            isGrounded = true;
-        }
-    }*/
+
 }

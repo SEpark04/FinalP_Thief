@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class SceneCtrl : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
+        // 스페이스바를 누르면 게임 시작
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gotoGame();

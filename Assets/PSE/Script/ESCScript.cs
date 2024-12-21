@@ -9,14 +9,16 @@ public class ESCScript : MonoBehaviour
 
     void Update()
     {
+        // esc¸¦ ´©¸£¸é ÄÑÁü
         if (Input.GetKeyDown(KeyCode.Escape) && !panel.activeSelf)
         {
             panel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.None;  
             Cursor.visible = true;
             Time.timeScale = 0;
             playerCtrl.enabled = false;
         }
+        // ÇÑ ¹ø ´õ ´©¸£¸é ²¨Áü
         else if (Input.GetKeyDown(KeyCode.Escape) && panel.activeSelf)
         {
             panel.SetActive(false);

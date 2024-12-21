@@ -5,8 +5,6 @@ public class MouseCursorCtrl : MonoBehaviour
 {
     public static MouseCursorCtrl Instance; // 싱글턴 인스턴스
 
-    [SerializeField] Texture2D customCursor; // 커스텀 커서
-    [SerializeField] Vector2 cursorSpot = Vector2.zero; // 커서 위치
 
     void Awake()
     {
@@ -37,22 +35,22 @@ public class MouseCursorCtrl : MonoBehaviour
         // 씬 이름에 따라 커서 설정
         if (scene.name == "Title") // 타이틀 화면
         {
-            SetCursorVisible(true, customCursor, CursorLockMode.None);
+            SetCursorVisible(true, CursorLockMode.None);
         }
         else if (scene.name == "LoadingScene") // 로딩 화면
         {
-            SetCursorVisible(false, null, CursorLockMode.Locked);
+            SetCursorVisible(false, CursorLockMode.Locked);
         }
         else if (scene.name == "Map") // 인게임
         {
-            SetCursorVisible(false, null, CursorLockMode.Locked);
+            SetCursorVisible(false, CursorLockMode.Locked);
         }
     }
     
-    public void SetCursorVisible(bool visible, Texture2D cursor, CursorLockMode lockMode)
+    //마우스커서 보이게 안 보이게 
+    public void SetCursorVisible(bool visible, CursorLockMode lockMode)
     {
         Cursor.visible = visible;
         Cursor.lockState = lockMode;
-        Cursor.SetCursor(cursor, cursorSpot, CursorMode.Auto);
     }
 }

@@ -19,6 +19,15 @@ public class Obstacle_turn_2_Ctrl : MonoBehaviour
     private Vector3 initialPosition;
     public float moveDistanceLimit = 20f; // 최대 이동 거리
 
+    //플레이어 충돌 관련 변수
+    private Collider colliders;
+    public float dmg = 30f;
+
+    void Start()
+    {
+        colliders = GetComponent<Collider>();
+    }
+
     void Update()
     {
         // 구형 탐지 수행
@@ -65,5 +74,18 @@ public class Obstacle_turn_2_Ctrl : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange); // 구형 탐지 범위를 시각화
+    }
+
+
+    // 플레이어 충돌 코드
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            colliders.enabled = false;
+            HpCtrl.instance.Hp_down(dmg);
+            HitEffectScript.instance.HitEffect();
+            //Destroy(this.gameObject);
+        }
     }
 }

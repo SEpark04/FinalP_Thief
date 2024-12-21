@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameOver()  //게임 오버
+    public void GameOver()  // 피가 다 닳으면 나오는 게임 오버
     {
         isOver = true;
         gameoverG.SetActive(true);
@@ -62,11 +62,18 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void Restart()  //게임 재시작
+    public void Restart()  // 게임 재시작
     {
-        SceneManager.LoadScene(0);
+        string currentScene = SceneManager.GetActiveScene().name; // 현재 씬의 이름을 가져옴
+        LoadingCtrl.LoadScene(currentScene); // 현재 씬 재시작
         startTime = Time.time; // 게임 시작 시간을 저장
         isOver = false;
     }
 
+
+    // 점프하면 HpCtrl 스크립트에서 실행되는 게임오버 이벤트
+    public void DieJump()
+    {
+        Debug.Log("점프함!");
+    }
 }

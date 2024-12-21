@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class HitEffectScript : MonoBehaviour
 {
-    /*[SerializeField] private float vig_speed;
+    [SerializeField] private float vig_speed;
     private Volume volume;
     private Vignette vig;
     private DepthOfField dep;
@@ -13,7 +15,7 @@ public class HitEffectScript : MonoBehaviour
 
     void Start()
     {
-        instance = this;
+        instance = this;  // 싱글턴
         volume = GetComponent<Volume>();
         volume.profile.TryGet(out vig);
         volume.profile.TryGet(out dep);
@@ -21,10 +23,12 @@ public class HitEffectScript : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.H) && Is_On_corutine == false)  // 작동 테스트용
         {
             StartCoroutine(Hit_Effect());
         }
+        */
     }
 
     IEnumerator Hit_Effect()
@@ -55,8 +59,9 @@ public class HitEffectScript : MonoBehaviour
         yield return null;
     }
 
+    // 다른 스크립트에서 불러내서 사용 가능
     public void HitEffect()
     {
         StartCoroutine(Hit_Effect());
-    }*/
+    }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3784,6 +3784,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1601685858}
     m_Modifications:
+    - target: {fileID: 2178724686905627564, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178724686905627564, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178724686905627564, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
+        type: 3}
+      propertyPath: detectionRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5326168351634955486, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
         type: 3}
       propertyPath: m_Name
@@ -3995,6 +4010,21 @@ PrefabInstance:
         type: 3}
       propertyPath: moveDistanceLimit
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: detectionRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5955746877184904241, guid: 16ebc4d3271062c4bb9d2976df5579fd,
         type: 3}
@@ -4423,6 +4453,21 @@ PrefabInstance:
         type: 3}
       propertyPath: moveDistanceLimit
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: detectionRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5955746877184904241, guid: 16ebc4d3271062c4bb9d2976df5579fd,
         type: 3}
@@ -4931,6 +4976,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512987637976554587, guid: 6fa4324c51d7cde4e831cdd54ef8ff16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512987637976554587, guid: 6fa4324c51d7cde4e831cdd54ef8ff16,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 5512987637976554587, guid: 6fa4324c51d7cde4e831cdd54ef8ff16,
         type: 3}
@@ -5479,6 +5534,21 @@ PrefabInstance:
         type: 3}
       propertyPath: moveDistanceLimit
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283737305095696066, guid: 16ebc4d3271062c4bb9d2976df5579fd,
+        type: 3}
+      propertyPath: detectionRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5955746877184904241, guid: 16ebc4d3271062c4bb9d2976df5579fd,
         type: 3}
@@ -6127,6 +6197,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808256169349613977, guid: 11e0df48bc9e8284489891d455463dd5,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808256169349613978, guid: 11e0df48bc9e8284489891d455463dd5,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7808256169349613980, guid: 11e0df48bc9e8284489891d455463dd5,
         type: 3}

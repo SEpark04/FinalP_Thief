@@ -19,6 +19,13 @@ public class Obstacle_Hammer_ctrl : MonoBehaviour
     // 회전 방향 (1은 시계방향, -1은 반시계방향)
     private int rotationDirection = 1;
 
+    public float dmg = 1;
+    private Collider colliders;
+
+    private void Start()
+    {
+        colliders = GetComponent<Collider>();
+    }
     void Update()
     {
         // 목표 각도 계산
@@ -36,6 +43,17 @@ public class Obstacle_Hammer_ctrl : MonoBehaviour
 
         // Z축을 기준으로 회전
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, currentRotationAngle);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            colliders.enabled = false;
+            HpCtrl.instance.Hp_down(dmg);
+            HitEffectScript.instance.HitEffect();
+            //Destroy(this.gameObject);
+        }
     }
 
 }

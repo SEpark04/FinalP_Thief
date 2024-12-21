@@ -7,6 +7,10 @@ public class Obstacle_PenguinEvent : MonoBehaviour
     public GameObject gameObjectPrefab; // 복제할 오브젝트의 프리팹
     public float fallSpeed = 5f; // 떨어지는 속도
 
+    private void Start()
+    {
+        
+    }
     void OnTriggerEnter(Collider other)
     {
         // 충돌한 오브젝트가 "Player" 태그를 가지고 있을 경우

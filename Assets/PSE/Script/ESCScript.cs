@@ -13,8 +13,7 @@ public class ESCScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !panel.activeSelf)
         {
             panel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;  
-            Cursor.visible = true;
+            MouseCursorCtrl.Instance.SetCursorVisible(true, CursorLockMode.None);
             Time.timeScale = 0;
             playerCtrl.enabled = false;
         }
@@ -22,8 +21,7 @@ public class ESCScript : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape) && panel.activeSelf)
         {
             panel.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            MouseCursorCtrl.Instance.SetCursorVisible(false, CursorLockMode.Locked);
             Time.timeScale = 1;
             playerCtrl.enabled = true;
         }

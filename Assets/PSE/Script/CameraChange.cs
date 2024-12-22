@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class CameraChange : MonoBehaviour
 {
-    public static CameraChange instance;
 
     public GameObject player;  // 기본 카메라
     public GameObject backCamera;  // 후방 카메라
-
-    void Awake()
-    {
-        instance = this;
-    }
 
     void Start()
     {

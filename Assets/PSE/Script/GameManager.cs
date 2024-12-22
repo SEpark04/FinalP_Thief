@@ -81,4 +81,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("JumpDeath");
     }
+
+
+    public void gotoGoodEnding()
+    {
+        SceneManager.LoadScene("GoodEnding");
+    }
 }

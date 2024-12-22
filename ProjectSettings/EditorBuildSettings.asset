@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JumpDeath.unity
     guid: 6261540e4b747fb43a67a8fa85d44085
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: fa5f0a0857919d4409a585fc8227262b
   m_configObjects: {}

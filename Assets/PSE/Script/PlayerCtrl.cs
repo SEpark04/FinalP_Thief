@@ -22,6 +22,8 @@ public class PlayerCtrl : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
 
+    public float minX = -20f;
+    public float maxX = 20f;
 
     void Start()
     {
@@ -44,8 +46,14 @@ public class PlayerCtrl : MonoBehaviour
         // 이동방향 
         moveDir = (Vector3.forward * mappingV + Vector3.right * mappingH);
 
+        // X축 제한을 위한 새로운 위치 계산
+        Vector3 newPos = transform.position + moveDir * speed * Time.deltaTime;
+
+        // X축 제한
+        newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
+
         // 캐릭터 이동
-        transform.Translate(moveDir * speed * Time.deltaTime, Space.Self);
+        transform.position = newPos;
 
         // 캐릭터 회전
         transform.Rotate(Vector3.up * Time.deltaTime * rotSpeed * Input.GetAxis("Mouse X"));

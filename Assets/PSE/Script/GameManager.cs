@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     public void Restart()  // 게임 재시작
     {
         string currentScene = SceneManager.GetActiveScene().name; // 현재 씬의 이름을 가져옴
-        LoadingCtrl.LoadScene(currentScene); // 현재 씬 재시작
+        LoadingCtrl.LoadScene("Map"); // 현재 씬 재시작
         startTime = Time.time; // 게임 시작 시간을 저장
         isOver = false;
     }

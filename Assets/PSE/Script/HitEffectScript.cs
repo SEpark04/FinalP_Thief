@@ -21,16 +21,6 @@ public class HitEffectScript : MonoBehaviour
         volume.profile.TryGet(out dep);
     }
 
-    void Update()
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.H) && Is_On_corutine == false)  // 작동 테스트용
-        {
-            StartCoroutine(Hit_Effect());
-        }
-        */
-    }
-
     IEnumerator Hit_Effect()
     {
         vig.active = true;

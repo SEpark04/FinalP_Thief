@@ -4099,6 +4099,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2178724686905627564, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
         type: 3}
+      propertyPath: dmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178724686905627564, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
+        type: 3}
       propertyPath: moveSpeed
       value: 30
       objectReference: {fileID: 0}

@@ -84,7 +84,7 @@ public class Obstacle_turn_2_Ctrl : MonoBehaviour
         {
             colliders.enabled = false;
             HpCtrl.instance.Hp_down(dmg);
-            HitEffectScript.instance.HitEffect();
+            //HitEffectScript.instance.HitEffect();
             //Destroy(this.gameObject);
         }
     }

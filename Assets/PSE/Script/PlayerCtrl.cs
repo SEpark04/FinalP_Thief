@@ -61,10 +61,10 @@ public class PlayerCtrl : MonoBehaviour
         // 캐릭터 점프 (점프시 죽음)
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            /*rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;*/
-            HpCtrl.instance.jumpD = true;
-            HpCtrl.instance.Hp_down(90.0f);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+            //HpCtrl.instance.jumpD = true;
+            //HpCtrl.instance.Hp_down(90.0f);
         }
 
         // 바닥 인식하는 Ray

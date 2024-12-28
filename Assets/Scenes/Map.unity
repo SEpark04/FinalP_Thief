@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2530,6 +2530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9155756665123848626, guid: 6fa4324c51d7cde4e831cdd54ef8ff16,
         type: 3}
+      propertyPath: dmg
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155756665123848626, guid: 6fa4324c51d7cde4e831cdd54ef8ff16,
+        type: 3}
       propertyPath: rotationSpeed
       value: 90
       objectReference: {fileID: 0}
@@ -2642,6 +2647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1854472325}
   gameoverG: {fileID: 2110599985}
+  playerCtrl: {fileID: 776883070524670958}
   isOver: 0
 --- !u!4 &789023343
 Transform:
@@ -4100,7 +4106,7 @@ PrefabInstance:
     - target: {fileID: 2178724686905627564, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
         type: 3}
       propertyPath: dmg
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2178724686905627564, guid: e1f3eb9b7c62ede409fa1a4d6770ef88,
         type: 3}
@@ -4572,7 +4578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab8fffcf58d96b46b5e25af0f61f88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vig_speed: 10
+  vig_speed: 5
 --- !u!114 &1638232977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4598,7 +4604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638232975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.6, y: 12.72, z: 54.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5432,6 +5438,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9155756665123848626, guid: 6fa4324c51d7cde4e831cdd54ef8ff16,
         type: 3}
+      propertyPath: dmg
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155756665123848626, guid: 6fa4324c51d7cde4e831cdd54ef8ff16,
+        type: 3}
       propertyPath: rotationSpeed
       value: 150
       objectReference: {fileID: 0}
@@ -5659,7 +5670,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

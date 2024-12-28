@@ -8,7 +8,7 @@ public class HpCtrl : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private GameObject _gameover;
     public static HpCtrl instance;
-    private float hp = 100;
+    private float hp = 10;
 
     // 점프 시 죽는 이벤트
     public bool jumpD;
@@ -25,12 +25,13 @@ public class HpCtrl : MonoBehaviour
     {
         _slider.value -= damage;  // 체력바 줄어들게 만듦
         StartCoroutine(hp_red_change());  // 체력바 빨갛게
+        HitEffectScript.instance.HitEffect();
     }
 
     //데미지를 입었을 때 순간적으로 체력바를 붉게 만듦
     IEnumerator hp_red_change()
     {
-        HitEffectScript.instance.HitEffect();
+        //HitEffectScript.instance.HitEffect();
         _slider.image.color = Color.red;
 
         yield return new WaitForSeconds(0.08f);

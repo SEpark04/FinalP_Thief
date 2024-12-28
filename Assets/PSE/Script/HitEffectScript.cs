@@ -21,15 +21,26 @@ public class HitEffectScript : MonoBehaviour
         volume.profile.TryGet(out dep);
     }
 
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H) && Is_On_corutine == false)
+        {
+            StartCoroutine(Hit_Effect());
+        }
+    }
+
+
     IEnumerator Hit_Effect()
     {
+        
         vig.active = true;
         Is_On_corutine = true;
         dep.active = true;
         vig.intensity.value = 0f;
         dep.focalLength.value = 0;
 
-        for (float i = 0; vig.intensity.value <= 0.3f; i++)
+        for (float i = 0; vig.intensity.value <= 0.45f; i++)
         {
             vig.intensity.value += vig_speed * Time.smoothDeltaTime;
             dep.focalLength.value += 100 * vig_speed * Time.smoothDeltaTime;

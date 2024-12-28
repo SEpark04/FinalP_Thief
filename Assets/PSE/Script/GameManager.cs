@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     private float startTime;  //게임 시작 시간 저장
 
     [SerializeField] private GameObject gameoverG;  //게임 오버 화면
+    [SerializeField] private MonoBehaviour playerCtrl;  //플레이어 스크립트
     public bool isOver;  //게임오버 여부 확인
+
 
     void Awake()
     {
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         isOver = false;
         startTime = Time.time; // 게임 시작 시간을 저장
+        playerCtrl.enabled = true;
     }
 
     void Update()
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
     {
         isOver = true;
         gameoverG.SetActive(true);
+        playerCtrl.enabled = false;
 
 
         if (Input.GetKeyDown(KeyCode.R) && isOver == true)  // 게임 오버 시 R키 누르면 게임 재시작
@@ -68,6 +72,7 @@ public class GameManager : MonoBehaviour
         LoadingCtrl.LoadScene("Map"); // 현재 씬 재시작
         startTime = Time.time; // 게임 시작 시간을 저장
         isOver = false;
+        playerCtrl.enabled = true;
     }
 
 
